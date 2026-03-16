@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#6366f1',
+            'accent-light': '#818cf8',
+            'accent-dark': '#4f46e5',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.7s ease forwards',
+            'fade-in': 'fadeIn 0.7s ease forwards',
+            'slide-left': 'slideLeft 0.7s ease forwards',
+            'slide-right': 'slideRight 0.7s ease forwards',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideLeft: {
+              '0%': { opacity: '0', transform: 'translateX(40px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            slideRight: {
+              '0%': { opacity: '0', transform: 'translateX(-40px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-16px)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Scroll animation base */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Stagger delay helpers */
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+    .delay-500 { transition-delay: 0.5s; }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Hero gradient background */
+    .hero-bg {
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 40%, #24243e 70%, #1a1a2e 100%);
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.35) 0px, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(168,85,247,0.3) 0px, transparent 50%),
+        radial-gradient(ellipse at 60% 80%, rgba(236,72,153,0.2) 0px, transparent 50%),
+        linear-gradient(135deg, #0f0c29 0%, #302b63 40%, #24243e 70%, #1a1a2e 100%);
+    }
+
+    /* Animated particles */
+    .hero-particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      animation: floatParticle linear infinite;
+    }
+    @keyframes floatParticle {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0.5; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+
+    /* Card hover */
+    .work-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .work-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(99,102,241,0.12);
+    }
+
+    /* Nav link underline */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #6366f1;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Skill badge */
+    .skill-badge {
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .skill-badge:hover {
+      transform: scale(1.05);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="text-xl font-bold gradient-text tracking-tight">
+        Portfolio
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <li><a href="#about" class="nav-link hover:text-accent transition-colors">About</a></li>
+        <li><a href="#works" class="nav-link hover:text-accent transition-colors">Works</a></li>
+        <li><a href="#skills" class="nav-link hover:text-accent transition-colors">Skills</a></li>
+        <li><a href="#contact" class="nav-link hover:text-accent transition-colors">Contact</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md">
+        Get in touch
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+        <svg class="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-sm border-t border-gray-100 px-6 py-4">
+      <ul class="flex flex-col gap-4 text-sm font-medium text-gray-700">
+        <li><a href="#about" class="block hover:text-accent transition-colors" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#works" class="block hover:text-accent transition-colors" onclick="closeMobileMenu()">Works</a></li>
+        <li><a href="#skills" class="block hover:text-accent transition-colors" onclick="closeMobileMenu()">Skills</a></li>
+        <li><a href="#contact" class="block hover:text-accent transition-colors" onclick="closeMobileMenu()">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" class="hero-bg min-h-screen flex items-center pt-20">
+    <div class="max-w-6xl mx-auto px-6 w-full">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
+
+        <!-- Text -->
+        <div class="flex-1 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-indigo-50 text-accent text-xs font-semibold px-4 py-2 rounded-full mb-6 animate-fade-in">
+            <span class="w-2 h-2 bg-accent rounded-full animate-pulse-slow"></span>
+            Available for work
+          </div>
+
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6 animate-fade-up">
+            Hi!<br />
+            <span class="gradient-text">Aya Arai</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-gray-500 font-light max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed animate-fade-up" style="animation-delay:0.15s">
+            Frontend Developer & UI Designer.<br />
+            美しいプロダクトを、丁寧なコードで届けます。
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up" style="animation-delay:0.3s">
+            <a href="#works" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-indigo-200 hover:shadow-xl hover:shadow-indigo-200 hover:-translate-y-0.5">
+              View My Work
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#about" class="inline-flex items-center justify-center gap-2 border border-gray-200 hover:border-accent text-gray-700 hover:text-accent font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5">
+              About Me
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="flex items-center gap-8 mt-14 justify-center lg:justify-start animate-fade-up" style="animation-delay:0.45s">
+            <div class="text-center lg:text-left">
+              <p class="text-3xl font-bold text-gray-900">3+</p>
+              <p class="text-sm text-gray-400 mt-1">Years Exp.</p>
+            </div>
+            <div class="w-px h-10 bg-gray-200"></div>
+            <div class="text-center lg:text-left">
+              <p class="text-3xl font-bold text-gray-900">20+</p>
+              <p class="text-sm text-gray-400 mt-1">Projects</p>
+            </div>
+            <div class="w-px h-10 bg-gray-200"></div>
+            <div class="text-center lg:text-left">
+              <p class="text-3xl font-bold text-gray-900">100%</p>
+              <p class="text-sm text-gray-400 mt-1">Satisfaction</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="flex-1 flex justify-center lg:justify-end animate-float">
+          <div class="relative w-72 h-72 md:w-96 md:h-96">
+            <!-- Decorative rings -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 opacity-60"></div>
+            <div class="absolute -inset-4 rounded-full border border-indigo-100 opacity-40"></div>
+            <div class="absolute -inset-8 rounded-full border border-indigo-50 opacity-30"></div>
+            <!-- Avatar placeholder -->
+            <div class="absolute inset-4 rounded-full bg-gradient-to-br from-indigo-400 via-purple-400 to-pink-400 flex items-center justify-center shadow-2xl shadow-indigo-200">
+              <svg class="w-32 h-32 text-white opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+              </svg>
+            </div>
+            <!-- Floating badges -->
+            <div class="absolute -top-2 -right-4 bg-white rounded-2xl shadow-lg px-4 py-2.5 flex items-center gap-2 border border-gray-50">
+              <span class="text-lg">⚡</span>
+              <span class="text-sm font-semibold text-gray-700">React</span>
+            </div>
+            <div class="absolute -bottom-2 -left-4 bg-white rounded-2xl shadow-lg px-4 py-2.5 flex items-center gap-2 border border-gray-50">
+              <span class="text-lg">🎨</span>
+              <span class="text-sm font-semibold text-gray-700">Design</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+
+        <!-- Image side -->
+        <div class="flex-1 reveal-right">
+          <div class="relative">
+            <div class="w-full aspect-square max-w-sm mx-auto rounded-3xl bg-gradient-to-br from-gray-50 to-indigo-50 border border-gray-100 flex items-center justify-center overflow-hidden shadow-sm">
+              <div class="w-full h-full bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-50 flex items-center justify-center">
+                <svg class="w-40 h-40 text-indigo-300" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                </svg>
+              </div>
+            </div>
+            <!-- Decorative dot pattern -->
+            <div class="absolute -bottom-6 -right-6 w-24 h-24 grid grid-cols-4 gap-1.5 opacity-30">
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div><div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text side -->
+        <div class="flex-1 reveal-left">
+          <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-4">About Me</p>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+            Creating with<br /><span class="gradient-text">passion</span>
+          </h2>
+          <p class="text-gray-500 leading-relaxed mb-6">
+            東京を拠点とするフロントエンドエンジニア / UIデザイナーです。
+            ユーザー体験を最優先に考え、美しく使いやすいプロダクトをつくることが好きです。
+          </p>
+          <p class="text-gray-500 leading-relaxed mb-10">
+            React・Next.js・TypeScript を中心に、デザインからコーディングまで一貫して対応できます。
+            新しい技術へのキャッチアップと、シンプルで保守性の高いコードを大切にしています。
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mb-10">
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-2xl">
+              <span class="text-2xl">🌏</span>
+              <div>
+                <p class="text-xs text-gray-400 mb-0.5">Location</p>
+                <p class="text-sm font-semibold text-gray-700">Tokyo, Japan</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-2xl">
+              <span class="text-2xl">💼</span>
+              <div>
+                <p class="text-xs text-gray-400 mb-0.5">Experience</p>
+                <p class="text-sm font-semibold text-gray-700">3+ Years</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-2xl">
+              <span class="text-2xl">🎓</span>
+              <div>
+                <p class="text-xs text-gray-400 mb-0.5">Education</p>
+                <p class="text-sm font-semibold text-gray-700">CS, University</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-2xl">
+              <span class="text-2xl">✨</span>
+              <div>
+                <p class="text-xs text-gray-400 mb-0.5">Focus</p>
+                <p class="text-sm font-semibold text-gray-700">UI / Frontend</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+            お問い合わせ
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== WORKS ========== -->
+  <section id="works" class="py-28 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="text-center mb-16 reveal">
+        <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-4">Works</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Selected Projects</h2>
+        <p class="text-gray-400 max-w-lg mx-auto">これまでに手がけたプロジェクトの一部です。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="work-card reveal delay-100 bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm group">
+          <div class="aspect-video bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center overflow-hidden">
+            <div class="text-6xl group-hover:scale-110 transition-transform duration-300">🛍️</div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-semibold bg-indigo-50 text-accent px-3 py-1 rounded-full">E-Commerce</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Fashion Store App</h3>
+            <p class="text-sm text-gray-500 leading-relaxed mb-5">Next.js + Stripe を使用したECサイト。スムーズなカート体験を実現。</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-lg">Next.js</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-lg">TypeScript</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-lg">Stripe</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="text-sm font-semibold text-accent hover:text-accent-dark flex items-center gap-1 transition-colors">
+                Demo
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="#" class="text-sm font-semibold text-gray-500 hover:text-gray-700 flex items-center gap-1 transition-colors">
+                GitHub
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="work-card reveal delay-200 bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm group">
+          <div class="aspect-video bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center overflow-hidden">
+            <div class="text-6xl group-hover:scale-110 transition-transform duration-300">📊</div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-semibold bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full">Dashboard</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Analytics Dashboard</h3>
+            <p class="text-sm text-gray-500 leading-relaxed mb-5">リアルタイムデータを可視化するダッシュボード。Chart.js で美しいグラフを実現。</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-lg">React</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-lg">Chart.js</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-lg">TailwindCSS</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="text-sm font-semibold text-accent hover:text-accent-dark flex items-center gap-1 transition-colors">
+                Demo
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="#" class="text-sm font-semibold text-gray-500 hover:text-gray-700 flex items-center gap-1 transition-colors">
+                GitHub
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="work-card reveal delay-300 bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm group">
+          <div class="aspect-video bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center overflow-hidden">
+            <div class="text-6xl group-hover:scale-110 transition-transform duration-300">✍️</div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-semibold bg-pink-50 text-pink-600 px-3 py-1 rounded-full">Blog</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Tech Blog Platform</h3>
+            <p class="text-sm text-gray-500 leading-relaxed mb-5">Markdown 対応の高速ブログ。SSGでパフォーマンスを最大化。</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-lg">Next.js</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-lg">MDX</span>
+              <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-lg">Vercel</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="#" class="text-sm font-semibold text-accent hover:text-accent-dark flex items-center gap-1 transition-colors">
+                Demo
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="#" class="text-sm font-semibold text-gray-500 hover:text-gray-700 flex items-center gap-1 transition-colors">
+                GitHub
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-12 reveal">
+        <a href="https://github.com" target="_blank" class="inline-flex items-center gap-2 border border-gray-200 hover:border-accent text-gray-600 hover:text-accent font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5">
+          View All on GitHub
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="text-center mb-16 reveal">
+        <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-4">Skills</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Tech Stack</h2>
+        <p class="text-gray-400 max-w-lg mx-auto">普段使っている技術スタックです。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Frontend -->
+        <div class="reveal delay-100">
+          <div class="p-8 bg-gray-50 rounded-3xl border border-gray-100 h-full">
+            <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center mb-5">
+              <span class="text-2xl">💻</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-5">Frontend</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-indigo-50 hover:border-indigo-200 hover:text-accent cursor-default">React</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-indigo-50 hover:border-indigo-200 hover:text-accent cursor-default">Next.js</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-indigo-50 hover:border-indigo-200 hover:text-accent cursor-default">TypeScript</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-indigo-50 hover:border-indigo-200 hover:text-accent cursor-default">Tailwind CSS</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-indigo-50 hover:border-indigo-200 hover:text-accent cursor-default">Framer Motion</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-indigo-50 hover:border-indigo-200 hover:text-accent cursor-default">HTML / CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="reveal delay-200">
+          <div class="p-8 bg-gray-50 rounded-3xl border border-gray-100 h-full">
+            <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center mb-5">
+              <span class="text-2xl">⚙️</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-5">Backend</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-600 cursor-default">Node.js</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-600 cursor-default">Express</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-600 cursor-default">PostgreSQL</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-600 cursor-default">Prisma</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-600 cursor-default">Supabase</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-600 cursor-default">REST API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="reveal delay-300">
+          <div class="p-8 bg-gray-50 rounded-3xl border border-gray-100 h-full">
+            <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center mb-5">
+              <span class="text-2xl">🛠️</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-5">Tools & Design</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 cursor-default">Figma</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 cursor-default">Git / GitHub</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 cursor-default">Vercel</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 cursor-default">Docker</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 cursor-default">VS Code</span>
+              <span class="skill-badge text-sm bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-xl hover:bg-pink-50 hover:border-pink-200 hover:text-pink-600 cursor-default">Notion</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="py-28 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+
+      <div class="reveal">
+        <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-4">Contact</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Let's work together</h2>
+        <p class="text-gray-400 max-w-lg mx-auto mb-12">
+          お仕事のご依頼・ご相談はお気軽にどうぞ。<br />通常24時間以内にご返信します。
+        </p>
+      </div>
+
+      <!-- Contact card -->
+      <div class="reveal bg-white rounded-3xl border border-gray-100 shadow-sm p-8 md:p-12">
+
+        <form class="space-y-5 text-left" onsubmit="handleSubmit(event)">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">お名前</label>
+              <input type="text" placeholder="山田 太郎" required
+                class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200 text-sm" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">メールアドレス</label>
+              <input type="email" placeholder="hello@example.com" required
+                class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200 text-sm" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">件名</label>
+            <input type="text" placeholder="お仕事のご依頼" required
+              class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200 text-sm" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">メッセージ</label>
+            <textarea rows="5" placeholder="プロジェクトの概要やご要件をお聞かせください。" required
+              class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200 text-sm resize-none"></textarea>
+          </div>
+
+          <button type="submit"
+            class="w-full bg-accent hover:bg-accent-dark text-white font-semibold py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-indigo-200 hover:shadow-xl hover:shadow-indigo-200 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+            <span id="btn-text">メッセージを送る</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-4 my-8">
+          <div class="flex-1 h-px bg-gray-100"></div>
+          <span class="text-xs text-gray-400 font-medium">または</span>
+          <div class="flex-1 h-px bg-gray-100"></div>
+        </div>
+
+        <!-- Social links -->
+        <div class="flex items-center justify-center gap-4">
+          <a href="https://github.com" target="_blank"
+            class="flex items-center gap-2.5 px-5 py-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-700 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 text-sm font-medium">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://twitter.com" target="_blank"
+            class="flex items-center gap-2.5 px-5 py-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-700 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 text-sm font-medium">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </a>
+          <a href="mailto:hello@example.com"
+            class="flex items-center gap-2.5 px-5 py-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-700 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 text-sm font-medium">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Email
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-white border-t border-gray-100 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">© 2026 Your Name. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-sm text-gray-400">
+        <a href="#hero" class="hover:text-accent transition-colors">Top</a>
+        <a href="#about" class="hover:text-accent transition-colors">About</a>
+        <a href="#works" class="hover:text-accent transition-colors">Works</a>
+        <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========== SCROLL TO TOP ========== -->
+  <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    class="fixed bottom-8 right-8 w-12 h-12 bg-accent hover:bg-accent-dark text-white rounded-full shadow-lg shadow-indigo-200 flex items-center justify-center opacity-0 translate-y-4 transition-all duration-300 z-50">
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // ---- Scroll Reveal ----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ---- Navbar scroll effect ----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-sm', 'border-b', 'border-gray-100');
+      } else {
+        navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-sm', 'border-b', 'border-gray-100');
+      }
+    });
+
+    // ---- Scroll to top button ----
+    const scrollTopBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollTopBtn.classList.remove('opacity-0', 'translate-y-4');
+        scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'translate-y-4');
+        scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+      }
+    });
+
+    // ---- Mobile menu ----
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+    }
+
+    // ---- Form submit ----
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const btnText = document.getElementById('btn-text');
+      btn.disabled = true;
+      btnText.textContent = '送信しました！';
+      btn.classList.add('bg-emerald-500', 'shadow-emerald-200');
+      btn.classList.remove('bg-accent', 'shadow-indigo-200');
+      setTimeout(() => {
+        btn.disabled = false;
+        btnText.textContent = 'メッセージを送る';
+        btn.classList.remove('bg-emerald-500', 'shadow-emerald-200');
+        btn.classList.add('bg-accent', 'shadow-indigo-200');
+        e.target.reset();
+      }, 3000);
+    }
+
+    // ---- Active nav link highlight ----
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('text-accent');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('text-accent');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => sectionObserver.observe(section));
+  </script>
+
+</body>
+</html>

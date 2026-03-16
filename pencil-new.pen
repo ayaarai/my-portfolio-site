@@ -1,0 +1,2269 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "Khlm5",
+      "x": 0,
+      "y": 0,
+      "name": "Hero Section — EN",
+      "theme": {
+        "lang": "en"
+      },
+      "width": 1440,
+      "height": 900,
+      "fill": {
+        "type": "gradient",
+        "gradientType": "linear",
+        "enabled": true,
+        "rotation": 135,
+        "size": {
+          "height": 1
+        },
+        "colors": [
+          {
+            "color": "#060010",
+            "position": 0
+          },
+          {
+            "color": "#0d0020",
+            "position": 0.5
+          },
+          {
+            "color": "#050018",
+            "position": 1
+          }
+        ]
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "NzEHE",
+          "x": -100,
+          "y": -150,
+          "name": "Orb Purple",
+          "opacity": 0.75,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#7C3AED",
+                "position": 0
+              },
+              {
+                "color": "#7C3AED00",
+                "position": 1
+              }
+            ]
+          },
+          "width": 650,
+          "height": 650,
+          "effect": {
+            "type": "blur",
+            "radius": 80
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "Dq5Dm",
+          "x": 900,
+          "y": 380,
+          "name": "Orb Cyan",
+          "opacity": 0.55,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#0EA5E9",
+                "position": 0
+              },
+              {
+                "color": "#0EA5E900",
+                "position": 1
+              }
+            ]
+          },
+          "width": 750,
+          "height": 750,
+          "effect": {
+            "type": "blur",
+            "radius": 100
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "DGPmx",
+          "x": 800,
+          "y": -250,
+          "name": "Orb Pink",
+          "opacity": 0.5,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#EC4899",
+                "position": 0
+              },
+              {
+                "color": "#EC489900",
+                "position": 1
+              }
+            ]
+          },
+          "width": 550,
+          "height": 550,
+          "effect": {
+            "type": "blur",
+            "radius": 80
+          }
+        },
+        {
+          "type": "frame",
+          "id": "4FBAR",
+          "x": 270,
+          "y": 250,
+          "name": "Hero Content",
+          "layout": "vertical",
+          "gap": 24,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "GaoBC",
+              "name": "label",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#A78BFA",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "content": "PORTFOLIO",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "700",
+              "letterSpacing": 6
+            },
+            {
+              "type": "rectangle",
+              "id": "wBNwE",
+              "name": "Accent Line",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#7C3AED",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "width": 64,
+              "height": 2
+            },
+            {
+              "type": "text",
+              "id": "jm8Xx",
+              "name": "headline",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 135,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#FFFFFF",
+                    "position": 0
+                  },
+                  {
+                    "color": "#C084FC",
+                    "position": 0.55
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "textGrowth": "fixed-width",
+              "width": 900,
+              "content": "Creating Digital\nExperiences",
+              "lineHeight": 1,
+              "textAlign": "center",
+              "fontFamily": "Sora",
+              "fontSize": 80,
+              "fontWeight": "700",
+              "letterSpacing": -2
+            },
+            {
+              "type": "text",
+              "id": "KbTR3",
+              "name": "subtitle",
+              "fill": "#FFFFFF55",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "Design-driven developer crafting\nbeautiful and meaningful products",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 19,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "aZcDC",
+              "name": "ctaRow",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "m6lXH",
+                  "name": "ctaBtn",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 90,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#7C3AED",
+                        "position": 0
+                      },
+                      {
+                        "color": "#EC4899",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 50,
+                  "effect": [
+                    {
+                      "type": "shadow",
+                      "shadowType": "outer",
+                      "color": "#7C3AED55",
+                      "offset": {
+                        "x": 0,
+                        "y": 8
+                      },
+                      "blur": 32
+                    },
+                    {
+                      "type": "shadow",
+                      "shadowType": "outer",
+                      "color": "#EC489940",
+                      "offset": {
+                        "x": 0,
+                        "y": 2
+                      },
+                      "blur": 8
+                    }
+                  ],
+                  "padding": [
+                    16,
+                    40
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "JS03L",
+                      "name": "ctaLabel",
+                      "fill": "#FFFFFF",
+                      "content": "View My Work",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "u7vyi",
+                  "name": "outlineBtn",
+                  "fill": "#FFFFFF0D",
+                  "cornerRadius": 50,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#FFFFFF28"
+                  },
+                  "effect": {
+                    "type": "background_blur",
+                    "radius": 12
+                  },
+                  "padding": [
+                    16,
+                    40
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Jnlqv",
+                      "name": "outlineLabel",
+                      "fill": "#FFFFFF",
+                      "content": "Get In Touch",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "r0Bqr",
+          "x": 0,
+          "y": 0,
+          "name": "Navbar",
+          "width": 1440,
+          "height": 72,
+          "fill": "#FFFFFF08",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#FFFFFF18"
+          },
+          "effect": {
+            "type": "background_blur",
+            "radius": 20
+          },
+          "padding": [
+            0,
+            60
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "pMmHH",
+              "name": "navLogo",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#A78BFA",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "content": "ARAIAYA",
+              "fontFamily": "Sora",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "letterSpacing": 4
+            },
+            {
+              "type": "frame",
+              "id": "pfvvF",
+              "name": "navLinks",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8lXbk",
+                  "name": "link1",
+                  "fill": "#FFFFFF70",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "wsTO7",
+                  "name": "link2",
+                  "fill": "#FFFFFF70",
+                  "content": "Work",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Bpf6M",
+                  "name": "link3",
+                  "fill": "#FFFFFF70",
+                  "content": "Contact",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "p56rL",
+              "name": "Lang Switcher EN",
+              "fill": "#FFFFFF10",
+              "cornerRadius": 50,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#FFFFFF20"
+              },
+              "gap": 2,
+              "padding": 3,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NIMEC",
+                  "name": "enActiveBtn",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 90,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#7C3AED",
+                        "position": 0
+                      },
+                      {
+                        "color": "#EC4899",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 50,
+                  "padding": [
+                    5,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "YMXTg",
+                      "name": "enActiveTxt",
+                      "fill": "#FFFFFF",
+                      "content": "EN",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nSyI9",
+                  "name": "enGhostBtn",
+                  "cornerRadius": 50,
+                  "padding": [
+                    5,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jggHo",
+                      "name": "enGhostTxt",
+                      "fill": "#FFFFFF50",
+                      "content": "JA",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AMrc3",
+              "name": "navCTA",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#7C3AED",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 50,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#7C3AED50",
+                "offset": {
+                  "x": 0,
+                  "y": 4
+                },
+                "blur": 20
+              },
+              "padding": [
+                10,
+                24
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "6ebtI",
+                  "name": "navCTALabel",
+                  "fill": "#FFFFFF",
+                  "content": "Hire Me",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GjfCp",
+          "x": 55,
+          "y": 330,
+          "name": "Glass Card Experience",
+          "width": 200,
+          "height": 155,
+          "fill": "#FFFFFF0A",
+          "cornerRadius": 20,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#FFFFFF22"
+          },
+          "effect": {
+            "type": "background_blur",
+            "radius": 24
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "DNOm2",
+              "name": "dotRow",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "I9bGH",
+                  "name": "statusDot",
+                  "fill": "#22C55E",
+                  "width": 8,
+                  "height": 8
+                },
+                {
+                  "type": "text",
+                  "id": "aDIv1",
+                  "name": "statusTxt",
+                  "fill": "#FFFFFF60",
+                  "content": "Open to Work",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "1xCx6",
+              "name": "leftNum",
+              "fill": "#FFFFFF",
+              "content": "5+",
+              "fontFamily": "Sora",
+              "fontSize": 44,
+              "fontWeight": "700",
+              "letterSpacing": -2
+            },
+            {
+              "type": "text",
+              "id": "dA59f",
+              "name": "leftSub",
+              "fill": "#FFFFFF45",
+              "content": "Years of Experience",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "W3Gf9",
+          "x": 1182,
+          "y": 310,
+          "name": "Glass Card Projects",
+          "width": 200,
+          "height": 155,
+          "fill": "#FFFFFF0A",
+          "cornerRadius": 20,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#FFFFFF22"
+          },
+          "effect": {
+            "type": "background_blur",
+            "radius": 24
+          },
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "vu5fq",
+              "name": "iconBox",
+              "width": 36,
+              "height": 36,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 135,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#7C3AED",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "6ahmD",
+                  "name": "starIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "star",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "XhUga",
+              "name": "rightNum",
+              "fill": "#FFFFFF",
+              "content": "50+",
+              "fontFamily": "Sora",
+              "fontSize": 44,
+              "fontWeight": "700",
+              "letterSpacing": -2
+            },
+            {
+              "type": "text",
+              "id": "9TrCs",
+              "name": "rightSub",
+              "fill": "#FFFFFF45",
+              "content": "Projects Delivered",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "I8DMd",
+      "x": 1500,
+      "y": 0,
+      "name": "Hover States",
+      "width": 520,
+      "height": 480,
+      "fill": "#0d0020",
+      "cornerRadius": 16,
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 32,
+      "children": [
+        {
+          "type": "text",
+          "id": "CttgU",
+          "name": "panelTitle",
+          "fill": "#FFFFFF50",
+          "content": "✦ Hover Animation States",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "600",
+          "letterSpacing": 1
+        },
+        {
+          "type": "frame",
+          "id": "z4Fxg",
+          "name": "btnGroup",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "type": "text",
+              "id": "PKUKW",
+              "name": "btnLabel",
+              "fill": "#FFFFFF35",
+              "content": "Button — Default → Hover",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal",
+              "letterSpacing": 0.5
+            },
+            {
+              "type": "frame",
+              "id": "g4lQ1",
+              "name": "btnRow",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OfhdD",
+                  "name": "btnDefault",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 90,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#7C3AED",
+                        "position": 0
+                      },
+                      {
+                        "color": "#EC4899",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 50,
+                  "padding": [
+                    14,
+                    32
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s0jhI",
+                      "name": "btnDefaultTxt",
+                      "fill": "#FFFFFF",
+                      "content": "View My Work",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "cil21",
+                  "name": "arrowTxt",
+                  "fill": "#FFFFFF30",
+                  "content": "→",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "uQhlV",
+                  "name": "btnHover",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 90,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#9333EA",
+                        "position": 0
+                      },
+                      {
+                        "color": "#F472B6",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 50,
+                  "effect": [
+                    {
+                      "type": "shadow",
+                      "shadowType": "outer",
+                      "color": "#9333EA80",
+                      "blur": 28,
+                      "spread": 4
+                    },
+                    {
+                      "type": "shadow",
+                      "shadowType": "outer",
+                      "color": "#EC489960",
+                      "offset": {
+                        "x": 0,
+                        "y": 8
+                      },
+                      "blur": 40
+                    }
+                  ],
+                  "padding": [
+                    14,
+                    32
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "9OsDZ",
+                      "name": "btnHoverTxt",
+                      "fill": "#FFFFFF",
+                      "content": "View My Work",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "hFUTK",
+              "name": "hoverNote1",
+              "fill": "#7C3AED90",
+              "content": "scale(1.03) · glow-shadow pulse · 200ms ease-out",
+              "fontFamily": "Inter",
+              "fontSize": 10,
+              "fontWeight": "normal",
+              "letterSpacing": 0.3
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "shWOI",
+          "name": "divider",
+          "fill": "#FFFFFF10",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "3ugPm",
+          "name": "cardGroup",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "children": [
+            {
+              "type": "text",
+              "id": "kfjnS",
+              "name": "cardLabel",
+              "fill": "#FFFFFF35",
+              "content": "Glass Card — Default → Hover",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal",
+              "letterSpacing": 0.5
+            },
+            {
+              "type": "frame",
+              "id": "CvRAr",
+              "name": "cardRow",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "P6R2Q",
+                  "name": "cardDefault",
+                  "width": 170,
+                  "height": 100,
+                  "fill": "#FFFFFF0A",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#FFFFFF22"
+                  },
+                  "effect": {
+                    "type": "background_blur",
+                    "radius": 20
+                  },
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "j1Trt",
+                      "name": "cardDefaultNum",
+                      "fill": "#FFFFFF",
+                      "content": "50+",
+                      "fontFamily": "Sora",
+                      "fontSize": 32,
+                      "fontWeight": "700",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "gX5xz",
+                      "name": "cardDefaultSub",
+                      "fill": "#FFFFFF45",
+                      "content": "Projects Delivered",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "tNzC1",
+                  "name": "arrowTxt2",
+                  "fill": "#FFFFFF30",
+                  "content": "→",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "dxSVq",
+                  "name": "cardHover",
+                  "width": 170,
+                  "height": 100,
+                  "fill": "#FFFFFF16",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#FFFFFF40"
+                  },
+                  "effect": [
+                    {
+                      "type": "background_blur",
+                      "radius": 24
+                    },
+                    {
+                      "type": "shadow",
+                      "shadowType": "outer",
+                      "color": "#7C3AED35",
+                      "offset": {
+                        "x": 0,
+                        "y": 16
+                      },
+                      "blur": 40
+                    }
+                  ],
+                  "layout": "vertical",
+                  "gap": 6,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "voaWS",
+                      "name": "cardHoverNum",
+                      "fill": "#FFFFFF",
+                      "content": "50+",
+                      "fontFamily": "Sora",
+                      "fontSize": 32,
+                      "fontWeight": "700",
+                      "letterSpacing": -1
+                    },
+                    {
+                      "type": "text",
+                      "id": "PpB1D",
+                      "name": "cardHoverSub",
+                      "fill": "#FFFFFF70",
+                      "content": "Projects Delivered",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "WrTWk",
+              "name": "hoverNote2",
+              "fill": "#7C3AED90",
+              "content": "translateY(-4px) · glass opacity ↑ · border brighten · 250ms ease",
+              "fontFamily": "Inter",
+              "fontSize": 10,
+              "fontWeight": "normal",
+              "letterSpacing": 0.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "E1JNU",
+      "x": 0,
+      "y": 960,
+      "name": "Hero Section — JA",
+      "theme": {
+        "lang": "ja"
+      },
+      "width": 1440,
+      "height": 900,
+      "fill": {
+        "type": "gradient",
+        "gradientType": "linear",
+        "enabled": true,
+        "rotation": 135,
+        "size": {
+          "height": 1
+        },
+        "colors": [
+          {
+            "color": "#060010",
+            "position": 0
+          },
+          {
+            "color": "#0d0020",
+            "position": 0.5
+          },
+          {
+            "color": "#050018",
+            "position": 1
+          }
+        ]
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "rEMv4",
+          "x": -100,
+          "y": -150,
+          "name": "Orb Purple",
+          "opacity": 0.75,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#7C3AED",
+                "position": 0
+              },
+              {
+                "color": "#7C3AED00",
+                "position": 1
+              }
+            ]
+          },
+          "width": 650,
+          "height": 650,
+          "effect": {
+            "type": "blur",
+            "radius": 80
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "XmwmU",
+          "x": 900,
+          "y": 380,
+          "name": "Orb Cyan",
+          "opacity": 0.55,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#0EA5E9",
+                "position": 0
+              },
+              {
+                "color": "#0EA5E900",
+                "position": 1
+              }
+            ]
+          },
+          "width": 750,
+          "height": 750,
+          "effect": {
+            "type": "blur",
+            "radius": 100
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "JwFpI",
+          "x": 800,
+          "y": -250,
+          "name": "Orb Pink",
+          "opacity": 0.5,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1,
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#EC4899",
+                "position": 0
+              },
+              {
+                "color": "#EC489900",
+                "position": 1
+              }
+            ]
+          },
+          "width": 550,
+          "height": 550,
+          "effect": {
+            "type": "blur",
+            "radius": 80
+          }
+        },
+        {
+          "type": "frame",
+          "id": "RiLBo",
+          "x": 270,
+          "y": 250,
+          "name": "Hero Content",
+          "layout": "vertical",
+          "gap": 24,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "itTik",
+              "name": "label",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#A78BFA",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "content": "ポートフォリオ",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "700",
+              "letterSpacing": 3
+            },
+            {
+              "type": "rectangle",
+              "id": "ioYLt",
+              "name": "Accent Line",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#7C3AED",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "width": 64,
+              "height": 2
+            },
+            {
+              "type": "text",
+              "id": "MvukL",
+              "name": "headline",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 135,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#FFFFFF",
+                    "position": 0
+                  },
+                  {
+                    "color": "#C084FC",
+                    "position": 0.55
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "textGrowth": "fixed-width",
+              "width": 900,
+              "content": "デジタル体験を\n創り出す",
+              "lineHeight": 1,
+              "textAlign": "center",
+              "fontFamily": "Noto Sans JP",
+              "fontSize": 72,
+              "fontWeight": "700",
+              "letterSpacing": -2
+            },
+            {
+              "type": "text",
+              "id": "WlFPq",
+              "name": "subtitle",
+              "fill": "#FFFFFF55",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "美しく意味のあるプロダクトを\nデザイン思考で創り出す開発者",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "Noto Sans JP",
+              "fontSize": 19,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "IbN7S",
+              "name": "ctaRow",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "JZj0l",
+                  "name": "ctaBtn",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 90,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#7C3AED",
+                        "position": 0
+                      },
+                      {
+                        "color": "#EC4899",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 50,
+                  "effect": [
+                    {
+                      "type": "shadow",
+                      "shadowType": "outer",
+                      "color": "#7C3AED55",
+                      "offset": {
+                        "x": 0,
+                        "y": 8
+                      },
+                      "blur": 32
+                    },
+                    {
+                      "type": "shadow",
+                      "shadowType": "outer",
+                      "color": "#EC489940",
+                      "offset": {
+                        "x": 0,
+                        "y": 2
+                      },
+                      "blur": 8
+                    }
+                  ],
+                  "padding": [
+                    16,
+                    40
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "2TFqz",
+                      "name": "ctaLabel",
+                      "fill": "#FFFFFF",
+                      "content": "作品を見る",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": 14,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Efemd",
+                  "name": "outlineBtn",
+                  "fill": "#FFFFFF0D",
+                  "cornerRadius": 50,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#FFFFFF28"
+                  },
+                  "effect": {
+                    "type": "background_blur",
+                    "radius": 12
+                  },
+                  "padding": [
+                    16,
+                    40
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XJnQe",
+                      "name": "outlineLabel",
+                      "fill": "#FFFFFF",
+                      "content": "お問い合わせ",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": 14,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BtKbc",
+          "x": 0,
+          "y": 0,
+          "name": "Navbar",
+          "width": 1440,
+          "height": 72,
+          "fill": "#FFFFFF08",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#FFFFFF18"
+          },
+          "effect": {
+            "type": "background_blur",
+            "radius": 20
+          },
+          "padding": [
+            0,
+            60
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "qED39",
+              "name": "navLogo",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#A78BFA",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "content": "ARAIAYA",
+              "fontFamily": "Sora",
+              "fontSize": 15,
+              "fontWeight": "700",
+              "letterSpacing": 4
+            },
+            {
+              "type": "frame",
+              "id": "TLKeS",
+              "name": "navLinks",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cLN28",
+                  "name": "link1",
+                  "fill": "#FFFFFF70",
+                  "content": "について",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "4tpBH",
+                  "name": "link2",
+                  "fill": "#FFFFFF70",
+                  "content": "作品",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "G44Wy",
+                  "name": "link3",
+                  "fill": "#FFFFFF70",
+                  "content": "連絡",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "8dR3u",
+              "name": "Lang Switcher JA",
+              "fill": "#FFFFFF10",
+              "cornerRadius": 50,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#FFFFFF20"
+              },
+              "gap": 2,
+              "padding": 3,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vp3xH",
+                  "name": "jaGhostBtn",
+                  "cornerRadius": 50,
+                  "padding": [
+                    5,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "VuHoA",
+                      "name": "jaGhostTxt",
+                      "fill": "#FFFFFF50",
+                      "content": "EN",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "uAJYS",
+                  "name": "jaActiveBtn",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 90,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#7C3AED",
+                        "position": 0
+                      },
+                      {
+                        "color": "#EC4899",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "cornerRadius": 50,
+                  "padding": [
+                    5,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "00WBl",
+                      "name": "jaActiveTxt",
+                      "fill": "#FFFFFF",
+                      "content": "JA",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qQr0W",
+              "name": "navCTA",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#7C3AED",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 50,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#7C3AED50",
+                "offset": {
+                  "x": 0,
+                  "y": 4
+                },
+                "blur": 20
+              },
+              "padding": [
+                10,
+                24
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0LRzB",
+                  "name": "navCTALabel",
+                  "fill": "#FFFFFF",
+                  "content": "採用する",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "PN6QN",
+          "x": 55,
+          "y": 330,
+          "name": "Glass Card Experience",
+          "width": 200,
+          "height": 155,
+          "fill": "#FFFFFF0A",
+          "cornerRadius": 20,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#FFFFFF22"
+          },
+          "effect": {
+            "type": "background_blur",
+            "radius": 24
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "rAl6z",
+              "name": "dotRow",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "QZP9d",
+                  "name": "statusDot",
+                  "fill": "#22C55E",
+                  "width": 8,
+                  "height": 8
+                },
+                {
+                  "type": "text",
+                  "id": "opNhn",
+                  "name": "statusTxt",
+                  "fill": "#FFFFFF60",
+                  "content": "求職中",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": 11,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "3y6y4",
+              "name": "leftNum",
+              "fill": "#FFFFFF",
+              "content": "5+",
+              "fontFamily": "Sora",
+              "fontSize": 44,
+              "fontWeight": "700",
+              "letterSpacing": -2
+            },
+            {
+              "type": "text",
+              "id": "qtoBT",
+              "name": "leftSub",
+              "fill": "#FFFFFF45",
+              "content": "年以上の経験",
+              "fontFamily": "Noto Sans JP",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "QeMKy",
+          "x": 1182,
+          "y": 310,
+          "name": "Glass Card Projects",
+          "width": 200,
+          "height": 155,
+          "fill": "#FFFFFF0A",
+          "cornerRadius": 20,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#FFFFFF22"
+          },
+          "effect": {
+            "type": "background_blur",
+            "radius": 24
+          },
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 20,
+          "children": [
+            {
+              "type": "frame",
+              "id": "aP2Je",
+              "name": "iconBox",
+              "width": 36,
+              "height": 36,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 135,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#7C3AED",
+                    "position": 0
+                  },
+                  {
+                    "color": "#EC4899",
+                    "position": 1
+                  }
+                ]
+              },
+              "cornerRadius": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "yht9x",
+                  "name": "starIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "star",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "ui2XK",
+              "name": "rightNum",
+              "fill": "#FFFFFF",
+              "content": "50+",
+              "fontFamily": "Sora",
+              "fontSize": 44,
+              "fontWeight": "700",
+              "letterSpacing": -2
+            },
+            {
+              "type": "text",
+              "id": "R2nJG",
+              "name": "rightSub",
+              "fill": "#FFFFFF45",
+              "content": "件以上の納品実績",
+              "fontFamily": "Noto Sans JP",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "themes": {
+    "lang": [
+      "en",
+      "ja"
+    ]
+  },
+  "variables": {
+    "text-card-exp-status": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Open to Work",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "求職中",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "Open to Work"
+        },
+        {
+          "value": "Open to Work",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "求職中",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-card-exp-sub": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Years of Experience",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "年以上の経験",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "Years of Experience"
+        },
+        {
+          "value": "Years of Experience",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "年以上の経験",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-card-proj-sub": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Projects Delivered",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "件以上の納品実績",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "Projects Delivered"
+        },
+        {
+          "value": "Projects Delivered",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "件以上の納品実績",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-cta-primary": {
+      "type": "string",
+      "value": [
+        {
+          "value": "View My Work",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "作品を見る",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "View My Work"
+        },
+        {
+          "value": "View My Work",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "作品を見る",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-cta-secondary": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Get In Touch",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "お問い合わせ",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "Get In Touch"
+        },
+        {
+          "value": "Get In Touch",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "お問い合わせ",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-headline": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Creating Digital\nExperiences",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "デジタル体験を\n創り出す",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "Creating Digital\nExperiences"
+        },
+        {
+          "value": "Creating Digital\nExperiences",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "デジタル体験を\n創り出す",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-label": {
+      "type": "string",
+      "value": [
+        {
+          "value": "PORTFOLIO",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "ポートフォリオ",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "PORTFOLIO"
+        },
+        {
+          "value": "PORTFOLIO",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "ポートフォリオ",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-nav-about": {
+      "type": "string",
+      "value": [
+        {
+          "value": "About",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "について",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "About"
+        },
+        {
+          "value": "About",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "について",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-nav-contact": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Contact",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "連絡",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "Contact"
+        },
+        {
+          "value": "Contact",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "連絡",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-nav-hire": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Hire Me",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "採用する",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "Hire Me"
+        },
+        {
+          "value": "Hire Me",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "採用する",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-nav-work": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Work",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "作品",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "Work"
+        },
+        {
+          "value": "Work",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "作品",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    },
+    "text-subtitle": {
+      "type": "string",
+      "value": [
+        {
+          "value": "Design-driven developer crafting\nbeautiful and meaningful products",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "美しく意味のあるプロダクトを\nデザイン思考で創り出す開発者",
+          "theme": {
+            "lang": "ja"
+          }
+        },
+        {
+          "value": "Design-driven developer crafting\nbeautiful and meaningful products"
+        },
+        {
+          "value": "Design-driven developer crafting\nbeautiful and meaningful products",
+          "theme": {
+            "lang": "en"
+          }
+        },
+        {
+          "value": "美しく意味のあるプロダクトを\nデザイン思考で創り出す開発者",
+          "theme": {
+            "lang": "ja"
+          }
+        }
+      ]
+    }
+  }
+}
