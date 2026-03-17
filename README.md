@@ -1,79 +1,65 @@
 # my-portfolio-site
 
-Pencil で設計したポートフォリオサイトのUIデザインです。
+Aya Arai のポートフォリオサイトです。Claude Code で作成しました。
 
 ---
 
-## デザインコンセプト
+## 概要
 
-ダークキャンバスにカラフルなグロウオーブを浮かべた、没入感のある **グラスモーフィズム × グラデーション** スタイル。
-Swiss Expressive デザインシステムをベースに、大胆なタイポグラフィと繊細なガラス質感を組み合わせています。
+シングルファイル構成のポートフォリオサイト。ビルド不要でブラウザだけで動作します。
 
----
-
-## Hero セクション
-
-### 背景
-- 深パープル `#060010` → ダークネイビー `#050018` への線形グラデーション（135°）
-- 3色のグロウオーブ（ブラー 80〜100px）が光源として浮遊
-  - **パープルオーブ** `#7C3AED` — 左上
-  - **ピンクオーブ** `#EC4899` — 右上
-  - **シアンオーブ** `#0EA5E9` — 右下
-
-### タイポグラフィ
-- フォント: **Sora**（見出し）/ **Inter**（本文・UI）
-- 見出し: 80px / Bold 700 / グラデーションテキスト（白 → パープル → ピンク）
-- サブタイトル: 19px / `#FFFFFF55`
-- ラベル: 11px / 大文字 / レタースペーシング 6px
-
-### グラスモーフィズム
-| 要素 | 手法 |
-|------|------|
-| ナビバー | `background_blur: 20px` + `#FFFFFF08` 背景 + 半透明ボーダー |
-| 経験カード（左） | `background_blur: 24px` + `#FFFFFF0A` 背景 + `#FFFFFF22` ボーダー |
-| 実績カード（右） | 同上 + グラデーションアイコンボックス |
-| アウトラインボタン | `background_blur: 12px` のガラスボタン |
-
-### ホバーアニメーション（実装仕様）
-| 要素 | アニメーション |
-|------|---------------|
-| メインボタン | `scale(1.03)` + パープルグロー拡大パルス `200ms ease-out` |
-| ガラスカード | `translateY(-4px)` + glass opacity 上昇 + ボーダー発光 `250ms ease` |
-| ナビリンク | アンダーラインフェードイン |
+- **URL**: `index.html` をブラウザで開くだけ
+- **構成**: HTML / Tailwind CSS (CDN) / Vanilla JS
+- **ホスティング**: GitHub Pages 等の静的ホスティングに対応
 
 ---
 
-## 多言語対応（EN / JA）
+## セクション構成
 
-ナビバーに `EN | JA` ピルトグルを配置。フレームごとに言語を切り替えます。
-
-### EN版
-- Headline: *Creating Digital Experiences*
-- CTA: *View My Work* / *Get In Touch*
-- Nav: *About* / *Work* / *Contact* / *Hire Me*
-
-### JA版
-- Headline: *デジタル体験を創り出す*
-- CTA: *作品を見る* / *お問い合わせ*
-- Nav: *について* / *作品* / *連絡* / *採用する*
+| セクション | 内容 |
+|-----------|------|
+| Hero | 自己紹介・プロフィール写真・CTA |
+| About | 経歴・趣味・専門分野 |
+| Works | 自作アプリ（企業選考ログ / 勉強ログ / チャットアプリ） |
+| Skills | 技術スタック（フロントエンド / サーバサイド / インフラ / ツール） |
+| Contact | お問い合わせフォーム |
 
 ---
 
-## カラーパレット
+## 技術スタック
 
-| 役割 | カラーコード |
-|------|-------------|
-| 背景ベース | `#060010` |
-| パープルアクセント | `#7C3AED` |
-| ピンクアクセント | `#EC4899` |
-| シアンアクセント | `#0EA5E9` |
-| テキスト（プライマリ） | `#FFFFFF` |
-| テキスト（セカンダリ） | `#FFFFFF55` |
-| 成功ステータス | `#22C55E` |
+- **HTML / CSS** — シングルファイル構成
+- **Tailwind CSS** (CDN) — カスタムテーマ設定あり（アクセントカラー: `#6366f1`）
+- **JavaScript** — Intersection Observer によるスクロールアニメーション、ナビバー制御、フォーム送信
+
+---
+
+## デザイン
+
+- アクセントカラー: Indigo `#6366f1`
+- フォント: Inter / Noto Sans JP（Google Fonts）
+- スクロールアニメーション: `reveal` / `reveal-left` / `reveal-right` クラスで遅延付きフェードイン
+- レスポンシブ対応（モバイルメニュー含む）
+- スクロールトップボタン
+
+---
+
+## 自作アプリ（Works）
+
+| アプリ名 | 技術構成 | リンク |
+|---------|---------|-------|
+| 企業選考ログ | React 18 / Tailwind CSS / Babel / AWS Amplify | [Demo](https://main.d1p17ozz9wcs0d.amplifyapp.com/) / [GitHub](https://github.com/ayaarai/Job_hunting_logbook) |
+| 勉強ログ | HTML / CSS / JavaScript / localStorage / AWS S3 | [Demo](https://study-app-20260307.s3.ap-northeast-1.amazonaws.com/index.html) / [GitHub](https://github.com/ayaarai/20260307_app) |
+| リアルタイムチャットアプリ | Vanilla JS / AWS Lambda / API Gateway / DynamoDB / S3 | [Demo](https://chatapp-frontend-20260308.s3.ap-northeast-1.amazonaws.com/index.html) / [GitHub](https://github.com/ayaarai/20260308_chatapp) |
+
+---
+
+## 今後の予定
+
+- Contact フォームの AWS SES 連携
 
 ---
 
 ## 使用ツール
 
-- **Pencil** — UIデザイン・プロトタイピング
-- **Claude Code** — Pencil MCP経由でのデザイン自動生成
+- **Claude Code** — コーディング支援・サイト構築
