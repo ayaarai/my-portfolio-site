@@ -665,21 +665,53 @@
     }
 
     // ---- Form submit ----
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
       const btnText = document.getElementById('btn-text');
+
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
+      };
+
       btn.disabled = true;
-      btnText.textContent = '送信しました！';
-      btn.classList.add('bg-emerald-500', 'shadow-emerald-200');
-      btn.classList.remove('bg-accent', 'shadow-indigo-200');
-      setTimeout(() => {
-        btn.disabled = false;
-        btnText.textContent = 'メッセージを送る';
-        btn.classList.remove('bg-emerald-500', 'shadow-emerald-200');
-        btn.classList.add('bg-accent', 'shadow-indigo-200');
-        e.target.reset();
-      }, 3000);
+      btnText.textContent = '送信中...';
+
+      try {
+        const res = await fetch('https://tozaebda75.execute-api.ap-northeast-1.amazonaws.com/prod/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) throw new Error('送信に失敗しました');
+
+        btnText.textContent = '送信しました！';
+        btn.classList.add('bg-emerald-500', 'shadow-emerald-200');
+        btn.classList.remove('bg-accent', 'shadow-indigo-200');
+        form.reset();
+
+        setTimeout(() => {
+          btn.disabled = false;
+          btnText.textContent = '送信する';
+          btn.classList.remove('bg-emerald-500', 'shadow-emerald-200');
+          btn.classList.add('bg-accent', 'shadow-indigo-200');
+        }, 3000);
+      } catch (err) {
+        btnText.textContent = 'エラーが発生しました。再度お試しください。';
+        btn.classList.add('bg-red-500', 'shadow-red-200');
+        btn.classList.remove('bg-accent', 'shadow-indigo-200');
+
+        setTimeout(() => {
+          btn.disabled = false;
+          btnText.textContent = '送信する';
+          btn.classList.remove('bg-red-500', 'shadow-red-200');
+          btn.classList.add('bg-accent', 'shadow-indigo-200');
+        }, 3000);
+      }
     }
 
     // ---- Active nav link highlight ----
