@@ -564,7 +564,7 @@
       <div class="reveal bg-white rounded-3xl border border-gray-100 shadow-sm p-8 md:p-12">
 
         <!-- TODO: AWS SES連携予定 -->
-        <form class="space-y-5 text-left" onsubmit="handleSubmit(event)">
+        <form id="contact-form" class="space-y-5 text-left">
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">お名前</label>
             <input type="text" name="name" placeholder="山田 太郎" required
@@ -665,54 +665,40 @@
     }
 
     // ---- Form submit ----
-    async function handleSubmit(e) {
+    const form = document.querySelector("#contact-form");
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const form = e.target;
-      const btn = form.querySelector('button[type="submit"]');
-      const btnText = document.getElementById('btn-text');
 
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value,
-      };
-
-      btn.disabled = true;
-      btnText.textContent = '送信中...';
+      const name = form.querySelector("[name='name']").value;
+      const email = form.querySelector("[name='email']").value;
+      const message = form.querySelector("[name='message']").value;
 
       try {
-        const res = await fetch('https://tozaebda75.execute-api.ap-northeast-1.amazonaws.com/prod/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
+        const res = await fetch("https://tozaebda75.execute-api.ap-northeast-1.amazonaws.com/prod/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ name, email, message })
         });
 
-        if (!res.ok) throw new Error('送信に失敗しました');
+        const data = await res.json();
 
-        btnText.textContent = '送信しました！';
-        btn.classList.add('bg-emerald-500', 'shadow-emerald-200');
-        btn.classList.remove('bg-accent', 'shadow-indigo-200');
-        form.reset();
+        console.log("レスポンス:", data);
 
-        setTimeout(() => {
-          btn.disabled = false;
-          btnText.textContent = '送信する';
-          btn.classList.remove('bg-emerald-500', 'shadow-emerald-200');
-          btn.classList.add('bg-accent', 'shadow-indigo-200');
-        }, 3000);
+        if (res.ok) {
+          alert("送信成功！");
+          form.reset();
+        } else {
+          alert("送信失敗：" + data.message);
+        }
+
       } catch (err) {
-        btnText.textContent = 'エラーが発生しました。再度お試しください。';
-        btn.classList.add('bg-red-500', 'shadow-red-200');
-        btn.classList.remove('bg-accent', 'shadow-indigo-200');
-
-        setTimeout(() => {
-          btn.disabled = false;
-          btnText.textContent = '送信する';
-          btn.classList.remove('bg-red-500', 'shadow-red-200');
-          btn.classList.add('bg-accent', 'shadow-indigo-200');
-        }, 3000);
+        console.error(err);
+        alert("通信エラー");
       }
-    }
+    });
 
     // ---- Active nav link highlight ----
     const sections = document.querySelectorAll('section[id]');
